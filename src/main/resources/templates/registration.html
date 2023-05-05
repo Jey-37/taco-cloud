@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/orderForm.css}">
+</head>
+<body>
+    <h1>Registration</h1>
+    <img th:src="@{/images/TacoLogo.jpg}" height="200" width="300"/>
+
+    <form method="post" th:action="@{/register}" id="registerForm">
+        <table id="register-table">
+            <tr>
+                <td><label for="username">Username:</label></td>
+                <td><input id="username" type="text" name="username"
+                           placeholder="Enter your username"/></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input id="password" type="password" name="password"
+                           placeholder="Enter your street"/></td>
+            </tr>
+            <tr>
+                <td><label for="confirm">Confirm password:</label></td>
+                <td><input id="confirm" type="password" name="confirm"
+                           placeholder="Enter your street"/></td>
+            </tr>
+            <tr>
+                <td><label for="fullName">Full name:</label></td>
+                <td><input id="fullName" type="text" name="fullName"
+                           placeholder="Enter your street"/></td>
+            </tr>
+            <tr>
+                <td><label for="street">Street:</label></td>
+                <td><input id="street" type="text" name="street"
+                           placeholder="Enter your street"/></td>
+            </tr>
+            <tr>
+                <td><label for="city">City:</label></td>
+                <td><input id="city" type="text" name="city"
+                           placeholder="Enter your city"/></td>
+            </tr>
+            <tr>
+                <td><label for="state">State:</label></td>
+                <td><input id="state" type="text" name="state"
+                           placeholder="Enter your state" maxlength="2" /></td>
+            </tr>
+            <tr>
+                <td><label for="zip">Zip code:</label></td>
+                <td><input id="zip" type="text" name="zip"
+                           placeholder="Enter your zip code"/></td>
+            </tr>
+            <tr>
+                <td><label for="phone">Phone number:</label></td>
+                <td><input id="phone" type="text" name="phone"
+                           placeholder="Enter your phone number"/></td>
+            </tr>
+        </table>
+        <button>Register</button>
+    </form>
+</body>
+</html>

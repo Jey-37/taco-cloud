@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/tacocloud?useLegacyDatetimeCode=false&serverTimezone=UTC
+    password: tacotaco
+    username: tacomaster
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+  data:
+    rest:
+      base-path: /api
