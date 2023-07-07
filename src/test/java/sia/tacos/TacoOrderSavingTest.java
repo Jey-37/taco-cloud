@@ -1,12 +1,10 @@
 package sia.tacos;
 
-import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.test.context.jdbc.Sql;
 import sia.tacos.model.Ingredient;
 import sia.tacos.model.Taco;
@@ -34,34 +32,28 @@ public class TacoOrderSavingTest
     @Autowired
     private IngredientRepository ingredientRepository;
 
-    @Autowired
-    private EntityManager entityManager;
-
-    @Autowired
-    private UserDetailsService userDetailsService;
-
     @BeforeEach
     public void addUserToDB() {
         User user = new User();
-        user.setUsername("vasil");
+        user.setUsername("andriy");
         user.setPassword("password");
-        user.setFullName("Vasil Kukharchuk");
+        user.setFullName("Andriy Honcharenko");
         userRepository.save(user);
     }
 
     @Test
     public void tacoOrderSavingTest() {
         TacoOrder order = new TacoOrder();
-        order.setDeliveryName("Vasil");
-        order.setDeliveryStreet("KhTZ str., 12");
-        order.setDeliveryCity("Kharkiv");
+        order.setDeliveryName("Andriy");
+        order.setDeliveryStreet("Bandery str., 73a");
+        order.setDeliveryCity("Izum");
         order.setDeliveryState("UA");
-        order.setDeliveryZip("61075");
+        order.setDeliveryZip("64306");
         order.setCcNumber("5375414106329757");
-        order.setCcExpiration("06/24");
-        order.setCcCvv("012");
+        order.setCcExpiration("07/25");
+        order.setCcCvv("583");
 
-        order.setUser(userRepository.findByUsername("vasil").get());
+        order.setUser(userRepository.findByUsername("andriy").get());
 
         var allIngredients = (Collection<Ingredient>)ingredientRepository.findAll();
         Random rand = new Random();
